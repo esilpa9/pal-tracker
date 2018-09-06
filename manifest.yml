@@ -1,7 +1,7 @@
 ---
 applications:
 - name: pal-tracker-jenkins-poc
-  path: build/libs/pal-tracker.jar
+  path: build/libs/pal-tracker-jenkins-poc.jar
   routes:
   - route: team-ginger-pal-tracker-jenkins-poc.cfapps.io
   env:
