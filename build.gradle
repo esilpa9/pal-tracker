@@ -17,10 +17,7 @@ buildscript {
 
 apply plugin: "java"
 apply plugin: "com.jfrog.artifactory"
-
-plugins {
-    id: "org.springframework.boot" version "1.5.4.RELEASE"
-}
+apply plugin: "org.springframework.boot" version "1.5.4.RELEASE"
 
 
 dependencies {
