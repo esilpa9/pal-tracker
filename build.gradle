@@ -28,7 +28,7 @@ artifactory {
     contextUrl = "http://pcfdevelopment-nttdata.eastus.cloudapp.azure.com/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
-            repoKey = 'gradle-dev-local'
+            repoKey = 'gradle-release-local'
             username = "hamidou.barry@nttdata.com"
             password = "AP2Tz7EJ7DNW2E4Rkd9nVgbhMAt"
             maven = true
