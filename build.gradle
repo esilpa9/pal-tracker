@@ -1,3 +1,9 @@
+plugins {
+    id "java"
+    id "org.springframework.boot" version "1.5.4.RELEASE"
+    id "com.jfrog.artifactory"
+}
+
 buildscript {
     repositories {
         maven {
@@ -13,10 +19,6 @@ buildscript {
         //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
     }
-}
-
-allprojects {
-    apply plugin: "com.jfrog.artifactory"
 }
 
 artifactory {
@@ -39,10 +41,6 @@ artifactory {
 
         }
     }
-}
-plugins {
-    id "java"
-    id "org.springframework.boot" version "1.5.4.RELEASE"
 }
 
 /*repositories {
