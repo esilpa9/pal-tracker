@@ -4,7 +4,7 @@ buildscript {
             url 'http://pcfdevelopment-nttdata.eastus.cloudapp.azure.com/artifactory/gradle-dev'
             credentials {
                 username = "hamidou.barry@nttdata.com"
-                password = "${artifactory_password}"
+                password = "Password@123"
             }
         }
 
