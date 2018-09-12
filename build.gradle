@@ -58,3 +58,11 @@ artifactory {
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
 ])
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
