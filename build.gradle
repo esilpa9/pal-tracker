@@ -34,6 +34,10 @@ artifactory {
             maven = true
 
         }
+        defaults {
+            publications ('mavenJava')
+            publishArtifacts = true
+        }
     }
     resolve {
         repository {
@@ -59,10 +63,4 @@ test.environment([
         "WELCOME_MESSAGE": "Hello from test",
 ])
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
+
