@@ -17,11 +17,10 @@ buildscript {
 
 apply plugin: "java"
 apply plugin: "com.jfrog.artifactory"
-apply plugin: "org.springframework.boot" version "1.5.4.RELEASE"
-
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:1.5.4.RELEASE")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
