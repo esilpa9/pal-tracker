@@ -1,3 +1,4 @@
+/*
 buildscript {
     repositories {
         maven {
@@ -47,23 +48,79 @@ artifactory {
     }
 }
 
+*/
 /*repositories {
     mavenCentral()
-}*/
+}*//*
 
 
+
+*/
 /*bootRun.environment( [
     "WELCOME_MESSAGE": "Hello from local environment",
-])*/
+])*//*
+
 
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
 ])
+*/
 
-artifactoryPublish {
-    skip = false //Skip build info analysis and publishing (false by default)
-    contextUrl = 'http://pcfdevelopment-nttdata.eastus.cloudapp.azure.com/artifactory'
+buildscript {
+    repositories {
+        jcenter()
+
+    }
+    dependencies {
+        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
+        /*compile("org.springframework.boot:spring-boot-starter-web")
+        compile("org.springframework.boot:1.5.4.RELEASE")
+        testCompile("org.springframework.boot:spring-boot-starter-test")*/
+    }
 }
+
+allprojects {
+    apply plugin: "java"
+    apply plugin: "com.jfrog.artifactory"
+    apply plugin: "maven-publish"
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:1.5.4.RELEASE")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+
+artifactory {
+    contextUrl = "http://pcfdevelopment-nttdata.eastus.cloudapp.azure.com/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = 'gradle-release-local'
+            username = "hamidou.barry@nttdata.com"
+            password = "AP2Tz7EJ7DNW2E4Rkd9nVgbhMAt"
+            maven = true
+
+        }
+        defaults {
+            publications('mavenJava')
+            publishArtifacts = true
+            publishPom = true
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'gradle-release'
+            username = "hamidou.barry@nttdata.com"
+            password = "AP2Tz7EJ7DNW2E4Rkd9nVgbhMAt"
+            maven = true
+
+        }
+    }
+}
+
+
 
 
 
