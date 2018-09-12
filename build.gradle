@@ -3,7 +3,7 @@ buildscript {
         maven {
             url 'http://pcfdevelopment-nttdata.eastus.cloudapp.azure.com/artifactory/gradle-dev'
             credentials {
-                username = "${artifactory_user}"
+                username = "hamidou.barry@nttdata.com"
                 password = "${artifactory_password}"
             }
         }
