@@ -1,3 +1,4 @@
+/*
 plugins {
     id "java"
     id "org.springframework.boot" version "1.5.4.RELEASE"
@@ -19,9 +20,10 @@ bootRun.environment( [
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
 ])
+*/
 
 
-/*
+
 buildscript {
     repositories {
         jcenter()
@@ -30,11 +32,6 @@ buildscript {
     dependencies {
         //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
-        */
-/*compile("org.springframework.boot:spring-boot-starter-web")
-        compile("org.springframework.boot:1.5.4.RELEASE")
-        testCompile("org.springframework.boot:spring-boot-starter-test")*//*
-
     }
 }
 
@@ -77,7 +74,7 @@ artifactory {
         }
     }
 }
-*/
+
 
 
 
