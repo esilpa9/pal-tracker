@@ -1,71 +1,30 @@
-/*
-buildscript {
-    repositories {
-        maven {
-            url 'http://pcfdevelopment-nttdata.eastus.cloudapp.azure.com/artifactory/gradle-release'
-            credentials {
-                username = "hamidou.barry@nttdata.com"
-                password = "AP2Tz7EJ7DNW2E4Rkd9nVgbhMAt"
-            }
-        }
-
-    }
-    dependencies {
-        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
-    }
-}
-
-apply plugin: "java"
-apply plugin: "com.jfrog.artifactory"
+apply plugin: 'java'
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:1.5.4.RELEASE")
+    compile('org.springframework.boot:1.5.4.RELEASE')
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-artifactory {
-    contextUrl = "http://pcfdevelopment-nttdata.eastus.cloudapp.azure.com/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
-    publish {
-        repository {
-            repoKey = 'gradle-release-local'
-            username = "hamidou.barry@nttdata.com"
-            password = "AP2Tz7EJ7DNW2E4Rkd9nVgbhMAt"
-            maven = true
 
-        }
-
-    }
-    resolve {
-        repository {
-            repoKey = 'gradle-release'
-            username = "hamidou.barry@nttdata.com"
-            password = "AP2Tz7EJ7DNW2E4Rkd9nVgbhMAt"
-            maven = true
-
-        }
-    }
+repositories {
+    mavenCentral()
 }
 
-*/
-/*repositories {
-    mavenCentral()
-}*//*
 
 
 
-*/
 /*bootRun.environment( [
     "WELCOME_MESSAGE": "Hello from local environment",
-])*//*
+])*/
 
 
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
 ])
-*/
 
+
+/*
 buildscript {
     repositories {
         jcenter()
@@ -74,9 +33,11 @@ buildscript {
     dependencies {
         //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
-        /*compile("org.springframework.boot:spring-boot-starter-web")
+        */
+/*compile("org.springframework.boot:spring-boot-starter-web")
         compile("org.springframework.boot:1.5.4.RELEASE")
-        testCompile("org.springframework.boot:spring-boot-starter-test")*/
+        testCompile("org.springframework.boot:spring-boot-starter-test")*//*
+
     }
 }
 
@@ -119,6 +80,7 @@ artifactory {
         }
     }
 }
+*/
 
 
 
