@@ -1,23 +1,20 @@
-apply plugin: 'java'
-
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile('org.springframework.boot:1.5.4.RELEASE')
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+plugins {
+    id "java"
+    id "org.springframework.boot" version "1.5.4.RELEASE"
 }
-
 
 repositories {
     mavenCentral()
 }
 
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
 
-
-
-/*bootRun.environment( [
-    "WELCOME_MESSAGE": "Hello from local environment",
-])*/
-
+bootRun.environment( [
+        "WELCOME_MESSAGE": "Hello from local environment",
+])
 
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
